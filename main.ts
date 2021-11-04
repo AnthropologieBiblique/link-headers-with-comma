@@ -17,16 +17,13 @@ export default class LinkHeadersDirectly extends Plugin {
 
 				barIndex = linkAsHTML.indexOf(">");
 				if(barIndex < 0) continue;
-				aliasBefore = linkAsHTML.substr(0,barIndex);
+				aliasBefore = linkAsHTML.substr(0,barIndex-1);
 				aliasAfter = linkAsHTML.substr(barIndex+2);
 				comma = ",";
 				alias = "";
-				console.log("AliasBefore: "+aliasBefore);
-				console.log("AliasAfter: "+aliasAfter);
-				alias.concat(aliasBefore.toString());
-				alias.concat(comma.toString());
-				alias.concat(aliasAfter.toString());
-				console.log("Alias: "+alias);
+				alias = alias.concat(aliasBefore,comma,aliasAfter);
+				/*alias = alias.concat(comma);*/
+				/*alias = alias.concat(aliasAfter);*/
 				(linkElements[i] as HTMLElement).innerText = alias;
 			}
 		}
