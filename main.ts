@@ -9,7 +9,7 @@ export default class LinkHeadersDirectly extends Plugin {
 		postProc = (el: HTMLElement, ctx: MarkdownPostProcessorContext) => {
 
 			let linkElements = el.querySelectorAll('a.internal-link');
-			let barIndex, alias,alias2;
+			let barIndex, aliasBefore,aliasAfter,comma,alias;
 
 			for(let i = 0; i < linkElements.length; i++) {
 
@@ -17,12 +17,16 @@ export default class LinkHeadersDirectly extends Plugin {
 
 				barIndex = linkAsHTML.indexOf(">");
 				if(barIndex < 0) continue;
-				alias = linkAsHTML.substr(0,barIndex);
-				alias2 = linkAsHTML.substr(barIndex+2);
-				console.log("Alias:"+alias)
-				console.log("Alias2"+alias2)
-				alias.concat(",",alias2);
-				console.log("Test:"+alias);
+				aliasBefore = linkAsHTML.substr(0,barIndex);
+				aliasAfter = linkAsHTML.substr(barIndex+2);
+				comma = ",";
+				alias = "";
+				console.log("AliasBefore: "+aliasBefore);
+				console.log("AliasAfter: "+aliasAfter);
+				alias.concat(aliasBefore.toString());
+				alias.concat(comma.toString());
+				alias.concat(aliasAfter.toString());
+				console.log("Alias: "+alias);
 				(linkElements[i] as HTMLElement).innerText = alias;
 			}
 		}
