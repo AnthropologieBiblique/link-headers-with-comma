@@ -17,7 +17,7 @@ export default class LinkHeadersDirectly extends Plugin {
 
 				barIndex = linkAsHTML.indexOf(">");
 				if(barIndex < 0) continue;
-				alias = linkAsHTML.substr(barIndex+2);
+				alias = string.concat(linkAsHTML.substr(0,barIndex),",",linkAsHTML.substr(barIndex+2));
 				(linkElements[i] as HTMLElement).innerText = alias;
 			}
 		}
