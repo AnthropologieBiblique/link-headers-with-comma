@@ -19,7 +19,7 @@ export default class LinkHeadersDirectly extends Plugin {
 				if(barIndex < 0) continue;
 				aliasBefore = linkAsHTML.substr(0,barIndex-1);
 				aliasAfter = linkAsHTML.substr(barIndex+2);
-				comma = ",";
+				comma = ", ";
 				alias = "";
 				alias = alias.concat(aliasBefore,comma,aliasAfter);
 				/*alias = alias.concat(comma);*/
