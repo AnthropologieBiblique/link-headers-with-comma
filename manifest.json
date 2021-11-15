@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"minAppVersion": "0.9.12",
 	"description": "When a header is linked, preview mode will replace > character by a coomma.",
-	"author": "Signynt",
-	"authorUrl": "https://github.com/Signynt",
+	"author": "Anthropologie Biblique",
+	"authorUrl": "https://github.com/anthropologieBiblique/",
 	"isDesktopOnly": false
 }
